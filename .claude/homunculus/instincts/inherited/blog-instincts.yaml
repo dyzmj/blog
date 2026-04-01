@@ -1,0 +1,519 @@
+# Instincts generated from https://github.com/dyzmj/blog
+# Generated: 2026-04-01T09:21:45.349Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: blog-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Commit Length
+
+## Action
+
+Write moderate-length commit messages (~51 characters)
+
+## Evidence
+
+- Average commit message length: 51 chars
+- Based on 200 commits
+
+---
+id: blog-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: blog-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: blog-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: blog-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: blog-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: content/en/ai-technology/posts/*, content/zh/ai-technology/posts/*, content/de/posts/*
+
+---
+id: blog-workflow-add-or-update-blog-post
+trigger: "when doing add or update blog post"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Workflow Add Or Update Blog Post
+
+## Action
+
+Follow the add-or-update-blog-post workflow:
+1. Create or update markdown file(s) in content/en/posts/ or content/zh/posts/ or content/en/ai-technology/posts/ or content/zh/ai-technology/posts/ or content/en/growth/posts/ or content/zh/growth/posts/
+2. If needed, add or update _index.md in the relevant section
+3. Optionally, add associated images to static/images/posts/
+4. Optionally, update layouts/partials/index_profile.html or other partials for homepage display
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: content/en/posts/*.md, content/zh/posts/*.md, content/en/ai-technology/posts/*.md
+
+---
+id: blog-workflow-site-visual-or-layout-enhancement
+trigger: "when doing site visual or layout enhancement"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Workflow Site Visual Or Layout Enhancement
+
+## Action
+
+Follow the site-visual-or-layout-enhancement workflow:
+1. Edit assets/css/extended/custom.css (and/or other CSS files)
+2. Update or add layouts/partials/*.html or layouts/_default/*.html for structure/UX changes
+3. Optionally, update config.yml or related config files
+4. Optionally, add new static/js or static/css files for new features
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: assets/css/extended/custom.css, layouts/partials/*.html, layouts/_default/*.html
+
+---
+id: blog-workflow-ai-chat-or-search-feature-development
+trigger: "when doing ai chat or search feature development"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Workflow Ai Chat Or Search Feature Development
+
+## Action
+
+Follow the ai-chat-or-search-feature-development workflow:
+1. Edit or create netlify/functions/blog-ai.js or similar Netlify function files
+2. Edit or create assets/js/search-palette.js or static/js/*.js for frontend logic
+3. Update layouts/partials/index_profile.html or layouts/partials/search-palette.html to wire up UI
+4. Optionally, update netlify.toml for deployment/config
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: netlify/functions/blog-ai.js, assets/js/search-palette.js, static/js/*.js
+
+---
+id: blog-workflow-documentation-update-readme
+trigger: "when doing documentation update readme"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dyzmj/blog
+---
+
+# Blog Workflow Documentation Update Readme
+
+## Action
+
+Follow the documentation-update-readme workflow:
+1. Edit README.md
+2. Commit with message referencing docs or feed update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md
+
+---
+id: blog-instinct-file-naming-camelCase
+trigger: "When creating or renaming a file in the codebase."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct File Naming CamelCase
+
+## Action
+
+Use camelCase for file names.
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- No snake_case or kebab-case files detected in examples.
+
+---
+id: blog-instinct-function-naming-camelCase
+trigger: "When defining a new function."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase.
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: blog-instinct-class-naming-PascalCase
+trigger: "When defining a new class."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase.
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: blog-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE.
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: blog-instinct-import-style-relative
+trigger: "When importing modules in JavaScript files."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Import Style Relative
+
+## Action
+
+Use relative import paths.
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: blog-instinct-export-style-named
+trigger: "When exporting modules or functions."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Export Style Named
+
+## Action
+
+Use named exports.
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: blog-instinct-test-location-separate
+trigger: "When adding or updating tests."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate directory from source files.
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: blog-instinct-test-file-pattern
+trigger: "When naming a test file."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Test File Pattern
+
+## Action
+
+Use the pattern *.test.* for test file names.
+
+## Evidence
+
+- Pattern in workflows.feature-development.filesInvolved
+
+---
+id: blog-instinct-add-tests-with-features
+trigger: "When implementing a new feature."
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Add Tests With Features
+
+## Action
+
+Add corresponding tests for the feature.
+
+## Evidence
+
+- Workflows.feature-development.commitSequence includes 'Add tests for feature'
+
+---
+id: blog-instinct-commit-prefix-convention
+trigger: "When writing a commit message."
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Commit Prefix Convention
+
+## Action
+
+Start the commit message with a conventional prefix such as feat, fix, refactor, chore, or style.
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'feat: wire profile chat to AI function', 'fix: improve SEO...'
+
+---
+id: blog-instinct-commit-message-length
+trigger: "When writing a commit message."
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Commit Message Length
+
+## Action
+
+Keep commit messages concise, around 50 characters on average.
+
+## Evidence
+
+- commits.averageLength is 51
+
+---
+id: blog-instinct-add-or-update-blog-post
+trigger: "When someone wants to publish a new article or update an existing post."
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Add Or Update Blog Post
+
+## Action
+
+Create or update markdown file(s) in the appropriate content directory, optionally update _index.md, add images to static/images/posts, and update homepage partials if needed.
+
+## Evidence
+
+- Workflow 'add-or-update-blog-post'
+- Files involved: content/en/posts/*.md, static/images/posts/**/*, layouts/partials/index_profile.html
+
+---
+id: blog-instinct-site-visual-layout-enhancement
+trigger: "When someone wants to improve the site's look, layout, or user experience."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Site Visual Layout Enhancement
+
+## Action
+
+Edit CSS files, update or add HTML partials, and optionally update config or add static JS/CSS files.
+
+## Evidence
+
+- Workflow 'site-visual-or-layout-enhancement'
+- Files involved: assets/css/extended/custom.css, layouts/partials/*.html
+
+---
+id: blog-instinct-ai-chat-search-feature
+trigger: "When someone wants to add or enhance AI-powered chat or search functionality."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Ai Chat Search Feature
+
+## Action
+
+Edit or create Netlify function files, frontend JS, update relevant HTML partials, and optionally update deployment config.
+
+## Evidence
+
+- Workflow 'ai-chat-or-search-feature-development'
+- Files involved: netlify/functions/blog-ai.js, assets/js/search-palette.js
+
+---
+id: blog-instinct-documentation-update-readme
+trigger: "When someone wants to update documentation or reflect latest changes in the README."
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: dyzmj/blog
+---
+
+# Blog Instinct Documentation Update Readme
+
+## Action
+
+Edit README.md and commit with a message referencing docs or feed update.
+
+## Evidence
+
+- Workflow 'documentation-update-readme'
+- File involved: README.md
+
