@@ -12,26 +12,6 @@
    order) so the overrides win cleanly.
    ============================================================ */
 
-/* ---------- Section heading: accent hairline draws in ----------
-   Each in-article <h2> already carries a 40×2px accent hairline
-   (custom.css → .post-content h2::before). When the heading scrolls
-   into view, micro-interactions.js flips it to .reveal-block.is-revealed
-   as the text eases up; ride that same moment to wipe the hairline in
-   from the left. A small delay lets the heading begin fading first, so
-   the line reads as a deliberate "section opens" flourish rather than
-   moving in lockstep with the text. Desktop + mobile, no extra DOM. */
-html.motion-reveal .post-content > h2.reveal-block::before {
-  transform-origin: left center;
-  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition-delay: 0.12s;
-}
-html.motion-reveal .post-content > h2.reveal-block:not(.is-revealed)::before {
-  transform: scaleX(0);
-}
-html.motion-reveal .post-content > h2.reveal-block.is-revealed::before {
-  transform: scaleX(1);
-}
-
 /* ---------- Article images: settle in (scale) as they fade ----------
    micro-interactions.css already fades each article image from 0→1 once
    it loads. Layer a gentle scale so the image eases up into place instead
@@ -69,10 +49,6 @@ html.motion-reveal .post-content img.img-loaded {
    Reduced motion: hard-neutralise everything above.
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  html.motion-reveal .post-content > h2.reveal-block::before {
-    transform: scaleX(1) !important;
-    transition: none !important;
-  }
   html.motion-reveal .post-content img {
     transform: none !important;
     transition: none !important;

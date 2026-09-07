@@ -785,45 +785,53 @@ body.dark .post-entry-title a:hover {
   letter-spacing: 0;
 }
 
+/* One reading edge, with hierarchy carried by type and spacing.
+   Reset both horizontal margins: PaperMod centres h2 with auto margins,
+   which indents it once the desktop prose reaches its 760px measure. */
 .post-content h2 {
-  font-size: 1.55rem;
+  font-size: 1.625rem;
   font-weight: 600;
-  line-height: 1.3;
-  margin-top: var(--space-12);
-  margin-bottom: var(--space-5);
+  line-height: 1.4;
+  margin: 3rem 0 1rem;
   padding-left: 0;
   border-left: none;
   position: relative;
 }
 
-.post-content h2::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--color-accent);
-  margin-bottom: var(--space-4);
-  opacity: 0.85;
-}
-
-.dark .post-content h2 {
-  border-left-color: transparent;
-}
-
 .post-content h3 {
-  font-size: 1.2rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  line-height: 1.35;
-  margin-top: var(--space-10);
-  margin-bottom: var(--space-3);
+  line-height: 1.45;
+  margin: 2.25rem 0 0.75rem;
 }
 
 .post-content h4 {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 1.4;
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-3);
+  line-height: 1.5;
+  margin: 1.75rem 0 0.625rem;
+}
+
+.post-content h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.post-content h6 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* A subheading immediately after its parent belongs to the same opening. */
+.post-content h2 + h3,
+.post-content h3 + h4,
+.post-content h4 + h5,
+.post-content h5 + h6 {
+  margin-top: 0.75rem;
 }
 
 /* Emphasis: let italics lean on the serif's cursive variant */
